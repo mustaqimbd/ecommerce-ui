@@ -98,7 +98,7 @@ const products = [
     },
 ];
 
-export default function FlashSaleCarousel() {
+export default function FlashSales() {
     // const [currentIndex, setCurrentIndex] = useState(0);
     const [timeLeft, setTimeLeft] = useState({ days: 3, hours: 23, minutes: 19, seconds: 56 });
 

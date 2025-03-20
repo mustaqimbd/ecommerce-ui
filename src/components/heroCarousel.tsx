@@ -22,7 +22,7 @@ const slides = [
   
 ];
 
-const Carousel = () => {
+const HeroCarousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
@@ -80,4 +80,4 @@ const Carousel = () => {
     );
 }
 
-export default Carousel
+export default HeroCarousel

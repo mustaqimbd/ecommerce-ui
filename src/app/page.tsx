@@ -1,15 +1,16 @@
-import CategoriesCarousel from "@/components/categoriesCarousel";
-import FlashSaleCarousel from "@/components/flashSaleCarousel";
-import HeroSection from "@/components/header/heroSection";
+
+import ExploreCategories from "@/components/exploreCategories";
+import FlashSales from "@/components/flashSales";
+import HeroSection from "@/components/heroSection";
 
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <FlashSaleCarousel />
+      <FlashSales />
       <hr className="border-gray-300 mb-20" />
-      <CategoriesCarousel />
+      <ExploreCategories />
       <hr className="border-gray-300 my-15" />
     </>
   );

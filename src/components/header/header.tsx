@@ -9,7 +9,7 @@ import whitelist from "../../../public/whitelist.svg"
 import Image from "next/image";
 
 
-const Navbar = () => {
+const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     // const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -113,4 +113,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Header;

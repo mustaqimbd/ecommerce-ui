@@ -12,6 +12,9 @@ const categories = [
     { name: "Camera", icon: "/category-camera.svg" },
     { name: "HeadPhones", icon: "/category-headphone.svg" },
     { name: "Gaming", icon: "/category-gamepad.svg" },
+    { name: "Phones", icon: "/category-cellPhone.svg" },
+    { name: "Computers", icon: "/category-computer.svg" },
+    { name: "SmartWatch", icon: "/category-smartWatch.svg" },
 ];
 
 
@@ -24,7 +27,7 @@ const categories = [
 //     { name: "Gaming", icon: "🎮" },
 // ];
 
-export default function CategoriesCarousel() {
+export default function ExploreCategories() {
 
     const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -68,8 +71,8 @@ export default function CategoriesCarousel() {
                     </div>
                 </div>
             </div>
-        
-          
+
+
             {/* Categories List */}
             <div ref={scrollRef} className="flex space-x-[30px] overflow-hidden">
                 {categories.map((category) => (
@@ -79,7 +82,7 @@ export default function CategoriesCarousel() {
                     >
                         {/* Display the category image */}
                         {/* <img src={category.icon} alt={category.name} /> */}
-                        <Image src={category.icon} alt={category.name} width={56} height={56} priority/>
+                        <Image src={category.icon} alt={category.name} width={56} height={56} priority />
                         <span className="text-sm font-medium">{category.name}</span>
                     </div>
                 ))}
