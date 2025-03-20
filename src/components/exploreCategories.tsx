@@ -12,9 +12,9 @@ const categories = [
     { name: "Camera", icon: "/category-camera.svg" },
     { name: "HeadPhones", icon: "/category-headphone.svg" },
     { name: "Gaming", icon: "/category-gamepad.svg" },
-    { name: "Phones", icon: "/category-cellPhone.svg" },
-    { name: "Computers", icon: "/category-computer.svg" },
-    { name: "SmartWatch", icon: "/category-smartWatch.svg" },
+    { name: "Phones1", icon: "/category-cellPhone.svg" },
+    { name: "Computers1", icon: "/category-computer.svg" },
+    { name: "SmartWatch1", icon: "/category-smartWatch.svg" },
 ];
 
 
@@ -50,7 +50,7 @@ export default function ExploreCategories() {
                 <div className="flex justify-between items-center">
                     <div className="flex items-center space-x-2">
                         <span className="bg-red-secondary w-5 h-10 rounded"></span>
-                        <span className="text-red-secondary font-semibold">Today&apos;s</span>
+                        <span className="text-red-secondary font-semibold">Categories</span>
                     </div>
                 </div>
                 <div className="flex justify-between items-center">

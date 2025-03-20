@@ -46,7 +46,7 @@ const products = [
 
 const BestSellingProducts = () => {
     return (
-        <div className="mb-20">
+        <div className="md:mb-32 mb-16">
             {/* Header */}
             <div className="mb-15 space-y-6">
                 <div className="flex justify-between items-center">
