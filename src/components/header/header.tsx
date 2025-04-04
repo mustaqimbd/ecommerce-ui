@@ -73,10 +73,10 @@ const Header = () => {
                         <input
                             type="text"
                             placeholder="Search..."
-                            className="px-2 py-1 text-xs rounded w-[130px] outline-none focus:ring-1 focus:ring-gray-300 bg-secondary"
+                            className="px-4 py-1 text-base rounded w-[130px] outline-none focus:ring-1 focus:ring-gray-300 bg-secondary"
                         />
                         {/* <Search className="absolute right-2 top-[6px] text-black" size={16} /> */}
-                        <Image src={search} alt="Cart" width={16} height={16} priority className="absolute right-2 top-[5px] text-black" />
+                        <Image src={search} alt="Cart" width={20} height={20} priority className="absolute right-2 top-[5px] text-black" />
                     </div>
                     {/* Mobile Menu Button */}
                     <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>

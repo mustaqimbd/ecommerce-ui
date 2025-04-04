@@ -7,19 +7,19 @@ import arrowRight from "../app/../../public/arrow-right.svg"
 const slides = [
     {
         id: 1,
-        image: "http://localhost:3000/phone.png", 
+        image: "/phone.png",
         title: "iPhone 14 Series",
         discount: "Up to 10% off Voucher",
         link: "#",
     },
     {
         id: 2,
-        image: "http://localhost:3000/phone.png", 
+        image: "/phone.png",
         title: "Another Deal",
         discount: "Save Big on Accessories",
         link: "#",
     },
-  
+
 ];
 
 const HeroCarousel = () => {
@@ -45,22 +45,24 @@ const HeroCarousel = () => {
                      md:flex-row items-center justify-between bg-black text-white">
                         <div className="flex flex-col space-y-2 lg:space-y-4 p-4 lg:p-16 md:p-8 mb-5 md:mb-0 -mt-10 md:-mt-0 md:-mr-10 lg:-mr-0">
                             <div className="flex items-center gap-5">
-                                <Image src={appleLogo} alt="Apple logo" width={40} priority/>
+                                <Image src={appleLogo} alt="Apple logo" width={40} priority />
                                 <span className="h-5">{slide.title}
                                 </span>
                             </div>
                             <h1 className="lg:text-5xl md:text-3xl text-2xl font-semibold lg:w-[294px] lg:leading-16 md:leading-10 md:my-5 lg:mt-0">{slide.discount}</h1>
                             <a href={slide.link} className="text-white flex items-center gap-3">
                                 <span className="hover:underline hover:underline-offset-8">Shop Now</span>
-                                <Image src={arrowRight} alt="Arrow right" width={24} priority/>
+                                <Image src={arrowRight} alt="Arrow right" width={24} priority />
                             </a>
                         </div>
-                        <Image
-                            src={slide.image}
-                            alt={slide.title}
-                            width={500}
-                            height={344}
-                        />
+                        <div>
+                            <Image
+                                src={slide.image}
+                                alt={slide.title}
+                                width={500}
+                                height={344}
+                            />
+                        </div>
                     </div>
                 </div>
             ))}

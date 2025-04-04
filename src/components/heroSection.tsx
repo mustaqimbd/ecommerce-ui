@@ -34,7 +34,7 @@ const HeroSection = () => {
 
 
     return (
-        <div>
+        <div className="md:mb-24 mb-30">
             <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
                 className="md:hidden absolute -top-[42px] left-4"
@@ -90,7 +90,7 @@ const HeroSection = () => {
                 </div>
 
                 {/* Hero Section */}
-                <div className="md:flex-1 w-full lg:h-[344px] h-[300px] relative mt-4 md:mt-10 md:ml-10 top-14 md:top-0">
+                <div className="md:flex-1 w-full lg:h-[344px] h-[300px] relative mt-8 md:mt-10 md:ml-10 top-16 md:top-0">
                     {/* Hero Image and Content */}
                     <HeroCarousel />
                 </div>

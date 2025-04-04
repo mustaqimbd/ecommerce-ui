@@ -152,7 +152,7 @@ export default function FlashSales() {
 
 
     return (
-        <div className="relative w-full lg:mt-[140px] mt-24 space-y-16">
+        <div className="relative w-full lg:mt-[140px] space-y-16">
             {/* Header with Countdown */}
             <div className="space-y-10">
                 <div>

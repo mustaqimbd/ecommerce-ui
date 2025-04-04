@@ -12,15 +12,16 @@ type TProduct = {
     id: number;
     image: string;
     title: string;
-    discount: string;
+    discount: string | null;
     price: string;
-    originalPrice: string;
+    originalPrice: string | null;
     rating: number;
     reviews: number;
+    isNew?: boolean;
 }
 
 const ProductCard = ({ product }: { product: TProduct }) => {
-    const { title, image, price, discount, originalPrice, rating, reviews } = product
+    const { title, image, price, discount, originalPrice, rating, reviews, isNew } = product
     const [hover, setHover] = useState(false);
 
     return (
@@ -31,10 +32,15 @@ const ProductCard = ({ product }: { product: TProduct }) => {
         >
             <div className="bg-secondary p-4 h-[250px] relative flex justify-center items-center">
                 {/* Discount Badge */}
-                <span className="absolute top-2 left-2 bg-red-secondary text-white text-xs px-3 py-1 rounded space-x-[2px] flex items-center">
-                    <span className="-mt-0.5">-</span><span>{discount}</span>
-                </span>
-
+                {discount ? (
+                    <span className="absolute top-2 left-2 bg-red-secondary text-white text-xs px-3 py-1 rounded space-x-[2px] flex items-center">
+                        <span className="-mt-0.5">-</span><span>{discount}</span>
+                    </span>
+                ) : (isNew && (
+                    <span className="absolute top-2 left-2 bg-green-primary text-white text-xs px-3 py-1 rounded space-x-[2px] flex items-center">
+                        <span className="-mt-0.5">New</span>
+                    </span>
+                ))}
                 {/* Wishlist & Quick View Icons */}
                 <div className="absolute top-3 right-2 flex flex-col space-y-2">
                     <button className="bg-white p-2 rounded-full hover:bg-gray-100 cursor-pointer">
@@ -69,25 +75,29 @@ const ProductCard = ({ product }: { product: TProduct }) => {
             {/* Product Info */}
             <div className="mt-3 space-y-2">
                 <h3 className="font-semibold">{title}</h3>
+                <div className={originalPrice ? "space-y-2" : "flex items-center gap-5"}>
+                    {/* Price */}
+                    <div className="flex items-center space-x-2">
+                        <span className="text-red-secondary font-semibold">${price}</span>
+                        {originalPrice && (
+                            <span className="opacity-50 line-through font-semibold">${originalPrice}</span>
+                        )}
+                    </div>
 
-                {/* Price */}
-                <div className="flex items-center space-x-2">
-                    <span className="text-red-secondary font-semibold">${price}</span>
-                    <span className="opacity-50 line-through font-semibold">${originalPrice}</span>
-                </div>
-
-                {/* Rating */}
-                <div className="flex items-center space-x-1">
-                    {Array.from({ length: rating }).map((_, i) => (
-                        <span key={i} className="font-bold">
-                            <Image src={ratingImg} alt="Rating" priority />
+                    {/* Rating */}
+                    <div className="flex items-center space-x-1">
+                        {Array.from({ length: rating }).map((_, i) => (
+                            <span key={i} className="font-bold">
+                                <Image src={ratingImg} alt="Rating" priority />
+                            </span>
+                        ))}
+                        <span className="font-bold">
+                            <Image src={ratingGrayImg} alt="Rating" priority />
                         </span>
-                    ))}
-                    <span className="font-bold">
-                        <Image src={ratingGrayImg} alt="Rating" priority />
-                    </span>
-                    <span className="text-sm opacity-50 font-semibold">({reviews})</span>
+                        <span className="text-sm opacity-50 font-semibold">({reviews})</span>
+                    </div>
                 </div>
+
             </div>
         </div>
     );
